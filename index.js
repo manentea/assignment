@@ -43,7 +43,7 @@
   };
 
   var switchToItem = function() {
-    $('.new-dish-form').toggle();
+    $('.new-dish-form').toggle(false);
     $('.new-item').show();
   };
 
@@ -57,8 +57,8 @@
   };
 
   var resetDish = function(event) {
-    $('.new-item').toggle();
-    $('.new-dish-form').toggle();
+    $('.new-item').toggle(false);
+    $('.new-dish-form').toggle(true);
     addToList();
   };
 
