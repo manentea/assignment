@@ -1,10 +1,12 @@
 <div class="container">
-  <div class='left-container' style='float:left;width:70%'>
-    <button class='finish' style='display:none'>Finish Dish</button>
-    <a class='new-dish' href="<%=new_dish_path %>">Add Dish!</a>
+  <div class='left-container'>
+    <div class="current-dish">
+    </div>
+    <button class='new-dish' data-path="<%=new_dish_path %>">Click Here to Add a Dish!</button>
   </div>
 
-  <div class='right-container' style='float:right;width:30%;'>
+  <div class='right-container'>
+    <h2><u>Dishes You've Created:</u></h2>
     <%= render @dishes %>
   </div>
 </div>

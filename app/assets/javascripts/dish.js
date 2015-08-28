@@ -1,8 +1,8 @@
 $(document).ready(function(){
   $('.new-dish').on('click', getDishForm);
-  $('.left-container').on('submit', '.new-dish-form', submitDish);
-  $('.left-container').on('submit', '.new-item-form', submitItem);
-  $('.finish').on('click', reset);
+  $('.container').on('submit', '.new-dish-form', submitDish);
+  $('.container').on('submit', '.new-item-form', submitItem);
+  $('.container').on('click', '.finish', reset);
   $('.delete').on('click', deleteDish);
 });
 
@@ -27,17 +27,23 @@ var reset = function(){
   location.reload();
 };
 
+var blur = function(){
+  $('.right-container').toggleClass('blur');
+  $('.left-container').toggleClass('blur');
+}
+
 var getDishForm = function(event){
   event.preventDefault();
   var $target = $(event.target);
 
   $.ajax({
-    url: $target.attr('href'),
+    url: $target.data('path'),
     method: 'get',
     dataType: 'html'
   }).done(function(response){
+    blur();
     $('.new-dish').toggle();
-    $('.left-container').prepend(response);
+    $('.container').prepend(response);
     $('.finish').show();
   }).fail(function(error){
     console.log(error);
@@ -51,7 +57,8 @@ var getItemForm = function(){
     dataType: 'html'
 
   }).done(function(response){
-    $('.left-container').append(response);
+    blur();
+    $('.container').append(response);
   }).fail(function(error){
     console.log(error);
   });
@@ -70,7 +77,7 @@ var submitItem = function(event){
     data: myData,
     dataType: 'html'
   }).done(function(response){
-    $('.' + dishId).append(response);
+    $('.current-dish').append(response);
     $target[0].reset();
   }).fail(function(error){
     console.log(error);
@@ -87,6 +94,7 @@ var submitDish = function(event){
     data: $target.serialize(),
     dataType: 'html'
   }).done(function(response){
+    blur();
     $('.left-container').prepend(response);
     $('.new-dish-container').remove();
     getItemForm();

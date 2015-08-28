@@ -1,6 +1,6 @@
-<div>
+<div class='new-item-container in'>
   <div>
-    <b>Add Items: </b>
+    <b>Now that your dish has a name, let's add some elements to it! Enter the item name, and then the ingredients (separated by commas). Or press 'Finish Dish' at any time to complete your dish! </b>
   </div>
   <div>
     <%= form_for @item, html: {class: 'new-item-form'} do |f| %>
@@ -8,9 +8,12 @@
         <%= f.label :name %>
         <%= f.text_field :name %>
       </div>
-        <%= f.label :ingredients, 'Ingredients(separated by commas)' %>
+      <div class="ing">
+        <%= f.label :ingredients %>
         <%= f.text_field :ingredients, placeholder: "Ingredients", value: '' %>
         <%= f.submit 'Submit' %>
+      </div>
     <% end %>
   </div>
+  <button class='finish'>Finish Dish</button>
 </div>
