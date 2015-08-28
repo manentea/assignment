@@ -76,7 +76,7 @@ var submitItem = function(event){
     data: myData,
     dataType: 'html'
   }).done(function(response){
-    $('.current-dish').append(response);
+    // $('.current-dish').append(response);
     $target[0].reset();
   }).fail(function(error){
     console.log(error);
