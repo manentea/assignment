@@ -1,0 +1,12 @@
+<div>
+  <div>
+    <b>Add Items: </b>
+  </div>
+  <div>
+    <%= form_for @item, html: {class: 'new-item-form'} do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.submit 'Submit' %>
+    <% end %>
+  </div>
+</div>

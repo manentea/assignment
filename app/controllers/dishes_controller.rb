@@ -1,5 +1,8 @@
 class DishesController < ApplicationController
 
+  def show
+  end
+
   def index
     @dishes = Dish.includes(items: [:ingredients]).all
   end
@@ -10,6 +13,12 @@ class DishesController < ApplicationController
   end
 
   def create
+    @dish = Dish.new(dish_params)
+    if @dish.save
+      render 'dishes/show', locals: {dish: @dish}, layout: false
+    else
+      flash[:notice] = 'Invalid Dish'
+    end
   end
 
   def destroy

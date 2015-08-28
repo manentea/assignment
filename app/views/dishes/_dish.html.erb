@@ -1,7 +1,8 @@
 <div>
-  <h2> <%= dish.name %> </h2>
+  <h2><%= dish.id %>. <%= dish.name %> </h2>
   <div>
     <b>Items: </b>
   </div>
   <%= render dish.items %>
+  <button class='delete' data-id='<%= dish.id %>'>Delete</button>
 </div>

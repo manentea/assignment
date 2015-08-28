@@ -1,9 +1,9 @@
-<div>
+<div class='new-dish-container'>
   <div>
     <b>Dish Name:</b>
   </div>
   <div>
-    <%= form_for @dish do |f| %>
+    <%= form_for @dish, html: {class: 'new-dish-form'} do |f| %>
         <%= f.label :name %>
         <%= f.text_field :name %>
         <%= f.submit 'Submit' %>
