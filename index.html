@@ -7,19 +7,29 @@
     </title>
   </head>
   <body>
-    <div class="left-container" style='float:left;width:70%'>
-      <div class="new-dish">
-        <h2>Create a Dish</h2>
-        <form class='new-dish-form'>
-          <input type='text' name='name' placeholder='Dish Name'/>
-          <input type='submit' value='Submit'/>
-        </form>
+    <div class="container">
+      <div class="left-container" style='float:left;width:70%'>
+        <div class="new-dish">
+          <h2>Create a Dish</h2>
+          <form class='new-dish-form'>
+            Name: <input type='text' name='name' placeholder='Dish Name'/>
+            <input type='submit' value='Submit'/>
+          </form>
+        </div>
+        <div class="new-item" style='display:none'>
+          <form class="new-item-form">
+            Name: <input type='text' name='item-name' placeholder='Name'/>
+            Ingredients: <input type='text' name='ingredients' placeholder='ingredients'/>
+            <input type='submit' value='Submit'/>
+          </form>
+          <button class='finish'>Finish Dish</button>
+        </div>
       </div>
-    </div>
-    <div class="right-container" style='float:right;width:30%'>
-      <h3>Dishes:</h3>
-      <ol class="dish-list">
-      </ol>
+      <div class="right-container" style='float:right;width:30%'>
+        <h3>Dishes:</h3>
+        <ol class="dish-list">
+        </ol>
+      </div>
     </div>
   </body>
 </html>
