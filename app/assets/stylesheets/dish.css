@@ -54,4 +54,8 @@ form {
 .right-container {
   width: 20%;
   float: right;
+  border: 2px solid black;
+  height: 100%;
+  padding-left: 1em;
+  padding-bottom: 1em;
 }
