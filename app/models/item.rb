@@ -1,6 +1,6 @@
 class Item < ActiveRecord::Base
   belongs_to :dish
-  has_many :ingredients
+  has_many :ingredients, dependent: :destroy
 
   validates :name, presence: true
 end

@@ -1,12 +1,14 @@
 <div class="container">
-  <div class='left-container'>
-    <div class="current-dish">
+  <div class="inner-container">
+    <div class='left-container'>
+      <div class="current-dish">
+      </div>
+      <button class='new-dish' data-path="<%=new_dish_path %>">Click Here to Add a Dish!</button>
     </div>
-    <button class='new-dish' data-path="<%=new_dish_path %>">Click Here to Add a Dish!</button>
-  </div>
 
-  <div class='right-container'>
-    <h2><u>Dishes You've Created:</u></h2>
-    <%= render @dishes %>
+    <div class='right-container'>
+      <h2><u>Dishes You've Created:</u></h2>
+      <%= render @dishes %>
+    </div>
   </div>
 </div>

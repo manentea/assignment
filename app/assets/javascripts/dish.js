@@ -28,9 +28,8 @@ var reset = function(){
 };
 
 var blur = function(){
-  $('.right-container').toggleClass('blur');
-  $('.left-container').toggleClass('blur');
-}
+  $('.inner-container').toggleClass('blur');
+};
 
 var getDishForm = function(event){
   event.preventDefault();
