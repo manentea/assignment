@@ -2,18 +2,29 @@ $(document).ready(function(){
   $('.new-dish').on('click', getDishForm);
   $('.left-container').on('submit', '.new-dish-form', submitDish);
   $('.left-container').on('submit', '.new-item-form', submitItem);
+  $('.finish').on('click', reset);
+  $('.delete').on('click', deleteDish);
 });
 
-var getIngredientForm = function() {
+var deleteDish = function(event){
+  event.preventDefault();
+  $target = $(event.target);
+  var controllerRoute = '/dishes/' + $target.data('id');
   $.ajax({
-    url: 'ingredients/new',
-    method: 'get',
-    dataType: 'html'
+    url: controllerRoute,
+    method: 'delete',
+    dataType: 'json'
   }).done(function(response){
-
+    console.log(response.status)
+    location.reload();
   }).fail(function(error){
     console.log(error);
   });
+};
+
+var reset = function(){
+  event.preventDefault();
+  location.reload();
 };
 
 var getDishForm = function(event){
@@ -40,7 +51,7 @@ var getItemForm = function(){
     dataType: 'html'
 
   }).done(function(response){
-    $('.left-container').prepend(response);
+    $('.left-container').append(response);
   }).fail(function(error){
     console.log(error);
   });
@@ -61,7 +72,6 @@ var submitItem = function(event){
   }).done(function(response){
     $('.' + dishId).append(response);
     $target[0].reset();
-    getIngredientForm();
   }).fail(function(error){
     console.log(error);
   });

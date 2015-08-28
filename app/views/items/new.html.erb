@@ -4,9 +4,13 @@
   </div>
   <div>
     <%= form_for @item, html: {class: 'new-item-form'} do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-      <%= f.submit 'Submit' %>
+      <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+        <%= f.label :ingredients, 'Ingredients(separated by commas)' %>
+        <%= f.text_field :ingredients, placeholder: "Ingredients", value: '' %>
+        <%= f.submit 'Submit' %>
     <% end %>
   </div>
 </div>

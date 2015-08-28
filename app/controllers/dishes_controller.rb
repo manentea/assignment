@@ -22,6 +22,9 @@ class DishesController < ApplicationController
   end
 
   def destroy
+    @dish = Dish.find(params[:id])
+    @dish.destroy
+    render :json => {status: 'success'}
   end
 
   private

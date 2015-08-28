@@ -1,5 +1,6 @@
 <div>
-  <div><%= item.name %></div>
-  <div><b>Ingredients</b></div>
-  <%= render item.ingredients %>
+  <div><b><%= item.name %></b> (ingredients):</div>
+    <ul>
+      <%= render item.ingredients %>
+    </ul>
 </div>
