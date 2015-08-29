@@ -64,3 +64,12 @@ form {
 body {
   background-color: rgba(150,225,150,.2);
 }
+
+.opening {
+  top: 10em;
+  left: 20em;
+  position: absolute;
+  word-wrap: break-word;
+  width: 50%;
+  text-align: center;
+}
