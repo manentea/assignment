@@ -4,7 +4,11 @@ form {
 }
 
 .finish {
+  margin-left: 2em;
   margin-bottom: 1em;
+  background-color: rgba(50,50,50,.3);
+  font-size: 1em;
+  width: 10em;
 }
 
 .new-dish-container,
@@ -19,6 +23,9 @@ form {
   top: 10%;
   left: 25%;
   padding: .5em;
+  -webkit-box-shadow: 0px 0px 8px 0px black;
+  -moz-box-shadow: 0px 0px 8px 0px black;
+  box-shadow: 0px 0px 15px 0px black;
 }
 
 @-webkit-keyframes fadein {
@@ -72,4 +79,10 @@ body {
   word-wrap: break-word;
   width: 50%;
   text-align: center;
+}
+
+button {
+  -webkit-box-shadow: 0px 0px 8px 0px black;
+  -moz-box-shadow: 0px 0px 8px 0px black;
+  box-shadow: 0px 0px 15px 0px black;
 }
