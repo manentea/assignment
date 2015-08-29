@@ -6,7 +6,7 @@ form {
 .finish {
   margin-left: 2em;
   margin-bottom: 1em;
-  background-color: rgba(50,50,50,.3);
+  background-color: rgba(200,200,200,.3);
   font-size: 1em;
   width: 10em;
 }
@@ -14,7 +14,7 @@ form {
 .new-dish-container,
 .new-item-container,
 .new-dish {
-  background-color: rgba(50,50,50,.3);
+  background-color: rgba(50,50,50,.5);
   border: 1px solid black;
   text-align: center;
   border-radius: 5px;
