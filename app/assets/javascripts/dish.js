@@ -9,9 +9,11 @@ $(document).ready(function(){
 
 var addIngredientField = function(event){
   event.preventDefault();
-  var newName = 'antonio';
-  var $div = $('.ing').clone();
-  $div.attr('name', newName);
+  var num = parseInt($('.items').children().last().children().attr('name')[12])
+  var newName = 'ingredients[' + (num + 1) + ']';
+  var $div = $('.items').children().last().clone();
+  $div.children().attr('name', newName);
+  $div.children().val('');
   $('.items').append($div);
 };
 
@@ -75,7 +77,6 @@ var getItemForm = function(){
 var submitItem = function(event){
   event.preventDefault();
   $target = $(event.target);
-  debugger
   var dishId = $('.left-container').children().first().attr('class');
   var dish = 'dish_id=' + dishId;
   var myData = $target.serialize() + '&' + dish;
