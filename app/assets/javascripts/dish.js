@@ -10,10 +10,12 @@
 
   var addIngredientField = function(event){
     event.preventDefault();
-    var num = parseInt($('.items').children().last().children().attr('name')[12])
-    var newName = 'ingredients[' + (num + 1) + ']';
+    var num = parseInt($('.items').children().last().children().first().attr('name')[12])
+    var newIngredientName = 'ingredients[' + (num + 1) + ']';
+    var newQuantityName = 'quantity[' + (num + 1) + ']';
     var $div = $('.items').children().last().clone();
-    $div.children().attr('name', newName);
+    $div.children().first().attr('name', newIngredientName);
+    $div.children().last().attr('name', newQuantityName);
     $div.children().val('');
     $('.items').append($div);
   };
