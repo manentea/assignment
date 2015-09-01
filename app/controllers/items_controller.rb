@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.dish_id = params[:dish_id]
     if @item.save
-      @item.create_ingredients(ingredient_params)
+      @item.create_ingredients(ingredient_params, quantity_params)
       render @item
     else
       flash[:notice] = 'Invalid item'
@@ -21,6 +21,10 @@ class ItemsController < ApplicationController
   end
 
   private
+
+  def quantity_params
+    params.require(:quantity).permit!
+  end
 
   def ingredient_params
     params.require(:ingredients).permit!
