@@ -34,7 +34,6 @@ var blur = function(){
 var getDishForm = function(event){
   event.preventDefault();
   var $target = $(event.target);
-
   $.ajax({
     url: $target.data('path'),
     method: 'get',

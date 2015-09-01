@@ -6,7 +6,8 @@ class Item < ActiveRecord::Base
 
   def create_ingredients(ingredients)
     ingredients[:ingredients].split(',').each do |ingredient|
-      Ingredient.create(name: ingredient, item_id: self.id)
+      ingredient = ingredient.split('-')
+      Ingredient.create(name: ingredient[0].strip, quantity: ingredient[1].strip, item_id: self.id)
     end
   end
 end
