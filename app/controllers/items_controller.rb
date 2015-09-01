@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
   private
 
   def ingredient_params
-    params.require(:item).permit(:ingredients)
+    params.require(:ingredients).permit!
   end
 
   def item_params

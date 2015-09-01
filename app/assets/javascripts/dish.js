@@ -4,7 +4,18 @@ $(document).ready(function(){
   $('.container').on('submit', '.new-item-form', submitItem);
   $('.container').on('click', '.finish', reset);
   $('.delete').on('click', deleteDish);
+  $('.container').on('click', '.add', addIngredientField);
 });
+
+var addIngredientField = function(event){
+  event.preventDefault();
+  var num = parseInt($('.items').children().last().children().attr('name')[12])
+  var newName = 'ingredients[' + (num + 1) + ']';
+  var $div = $('.items').children().last().clone();
+  $div.children().attr('name', newName);
+  $div.children().val('');
+  $('.items').append($div);
+};
 
 var deleteDish = function(event){
   event.preventDefault();
@@ -34,6 +45,7 @@ var blur = function(){
 var getDishForm = function(event){
   event.preventDefault();
   var $target = $(event.target);
+
   $.ajax({
     url: $target.data('path'),
     method: 'get',

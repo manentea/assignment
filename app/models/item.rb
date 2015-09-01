@@ -5,7 +5,8 @@ class Item < ActiveRecord::Base
   validates :name, presence: true
 
   def create_ingredients(ingredients)
-    ingredients[:ingredients].split(',').each do |ingredient|
+    ingredients = ingredients.values
+    ingredients.each do |ingredient|
       ingredient = ingredient.split('-')
       Ingredient.create(name: ingredient[0].strip, quantity: ingredient[1].strip, item_id: self.id)
     end
