@@ -8,10 +8,15 @@
         <%= f.label :name %>
         <%= f.text_field :name, placeholder: 'Name' %>
       </div>
-      <div class="ing">
-        <%= f.label :ingredients %>
-        <%= f.text_field :ingredients, placeholder: "Ingredients", value: '' %>
-        <%= f.submit 'Submit' %>
+      <div class="item">
+        <div class="ing">
+          <%= field_set_tag do %>
+            <%= f.label :ingredients %>
+            <%= f.text_field :ingredients, placeholder: "Ingredients", value: '' %>
+          <% end %>
+        </div>
+          <%= f.submit 'Submit' %>
+          <a href="#">Add another ingredient!</a>
       </div>
     <% end %>
   </div>

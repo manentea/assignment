@@ -4,7 +4,16 @@ $(document).ready(function(){
   $('.container').on('submit', '.new-item-form', submitItem);
   $('.container').on('click', '.finish', reset);
   $('.delete').on('click', deleteDish);
+  $('.container').on('click', '.add', addIngredientField);
 });
+
+var addIngredientField = function(event){
+  event.preventDefault();
+  var newName = 'antonio';
+  var $div = $('.ing').clone();
+  $div.attr('name', newName);
+  $('.items').append($div);
+};
 
 var deleteDish = function(event){
   event.preventDefault();
@@ -34,6 +43,7 @@ var blur = function(){
 var getDishForm = function(event){
   event.preventDefault();
   var $target = $(event.target);
+
   $.ajax({
     url: $target.data('path'),
     method: 'get',
@@ -65,6 +75,7 @@ var getItemForm = function(){
 var submitItem = function(event){
   event.preventDefault();
   $target = $(event.target);
+  debugger
   var dishId = $('.left-container').children().first().attr('class');
   var dish = 'dish_id=' + dishId;
   var myData = $target.serialize() + '&' + dish;
